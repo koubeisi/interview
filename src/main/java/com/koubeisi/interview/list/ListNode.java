@@ -27,4 +27,16 @@ public class ListNode {
         }
         return list.toString();
     }
+
+
+    public static ListNode create(int[] arr) {
+        if (arr == null || arr.length == 0) return null;
+        var head = new ListNode(arr[0]);
+        var node = head;
+        for (int i = 1; i < arr.length; i++) {
+            node.next = new ListNode(arr[i]);
+            node = node.next;
+        }
+        return head;
+    }
 }
